@@ -1,22 +1,27 @@
 import requests
 import base64
 import json
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 import pyotp  # this import is just for generating the 2fa code
 
 # put your roblosecurity cookie here
-roblosecurity = ""
+roblosecurity = os.getenv("ROBLOXSECURITY")
 
 # put your group id here
-group_id = 0
+group_id = os.getenv("GROUP_ID")
 
 # put user id of the player you want to send robux to here
-user_id = 0
+user_id = 2363135677
 
 # put the amount of robux to send here
-robux_amount = 0
+robux_amount = 1
 
 # two factor secret to generate the 6 digit 2fa code
-twofactor_secret = ""
+twofactor_secret = os.getenv("2FA_SECRET")
 
 # actual code below
 
